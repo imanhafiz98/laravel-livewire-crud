@@ -1,17 +1,17 @@
 <div>
-  
+
     @if (session()->has('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
     @endif
-  
+
     @if($updateMode)
-        @include('livewire.update')
+    @include('livewire.update')
     @else
-        @include('livewire.create')
+    @include('livewire.create')
     @endif
-  
+
     <table class="table table-bordered mt-5">
         <thead>
             <tr>
@@ -28,7 +28,7 @@
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->body }}</td>
                 <td>
-                <button wire:click="edit({{ $post->id }})" class="btn btn-primary btn-sm">Edit</button>
+                    <button wire:click="edit({{ $post->id }})" class="btn btn-primary btn-sm">Edit</button>
                     <button wire:click="delete({{ $post->id }})" class="btn btn-danger btn-sm">Delete</button>
                 </td>
             </tr>
